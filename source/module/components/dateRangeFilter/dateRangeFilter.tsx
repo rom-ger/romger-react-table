@@ -1,5 +1,5 @@
-import * as moment from 'moment';
 import { RgReactBaseComponent, RgReactBaseComponentInterface } from '@romger/react-base-components';
+import * as moment from 'moment';
 import { IFilterField, IRangeValue } from '../../../interfaces';
 import { dateRangeFilterTemplate } from './dateRangeFilterTemplate';
 

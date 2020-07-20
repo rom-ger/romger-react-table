@@ -33,9 +33,9 @@ interface RgReactTableConfigTitle { // интерфейс одного элем�
 
 interface RgReactTableConfig { // интерфейс конфига таблицы
     titles: RgReactTableConfigTitle[];
-    rows: {
+    rows: Array<{
         items: RgReactTableConfigItem[];
-    }[];
+    }>;
     onClickRow?: (row?: any) => any;
     selectRow?: (row?: any) => any;
     onDoubleClickRow?: (row?: any) => any;

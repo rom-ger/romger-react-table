@@ -29,9 +29,9 @@ export interface IRgReactTableSidebarProps {
     showExportTab: boolean;
     updateFilterAllValue: (changeFilterFields: IFilterField[]) => any;
     titles: RgReactTableConfigTitle[];
-    rows: {
+    rows: Array<{
         items: RgReactTableConfigItem[];
-    }[];
+    }>;
     titleForExportedFile?: string;
     titlesWithConfigRules: ITitleWidthConfigRule[];
     columnsConfig: IColumnConfig[];

@@ -4,9 +4,9 @@ import { tableSidebarDataExportTemplate } from './tableSidebarDataExportTemplate
 
 export interface IRgReactTableSidebarDataExportProps {
     titles: RgReactTableConfigTitle[];
-    rows: {
+    rows: Array<{
         items: RgReactTableConfigItem[];
-    }[];
+    }>;
     titleForExportedFile?: string;
 }
 

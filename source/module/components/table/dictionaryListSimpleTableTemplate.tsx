@@ -27,7 +27,7 @@ import { Sort } from '../sort/sort';
 import { StringFilter } from '../stringFilter/stringFilter';
 import { TableLoadingSpinner } from '../tableLoadingSpinner/tableLoadingSpinner';
 import { RgReactTableSidebar } from '../tableSidebar/tableSidebar';
-import { IItemWidthConfigRule, ITitleWidthConfigRule, IRgReactTable } from './dictionaryListSimpleTable';
+import { IItemWidthConfigRule, IRgReactTable, ITitleWidthConfigRule } from './dictionaryListSimpleTable';
 
 export const fixWrapTemplate = (context: IRgReactTable) => (
     <div

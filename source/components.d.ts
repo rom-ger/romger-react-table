@@ -30,9 +30,9 @@ interface IRgReactTableSidebarProps {
     filterFields: IFilterField[];
     updateFilterAllValue: (changeFilterFields: IFilterField[]) => any;
     titles: RgReactTableConfigTitle[];
-    rows: {
+    rows: Array<{
         items: RgReactTableConfigItem[];
-    }[];
+    }>;
     titleForExportedFile?: string;
 }
 
@@ -41,9 +41,9 @@ declare class RgReactTableSidebar extends React.Component<IRgReactTableSidebarPr
 
 interface IRgReactTableSidebarDataExportProps {
     titles: RgReactTableConfigTitle[];
-    rows: {
+    rows: Array<{
         items: RgReactTableConfigItem[];
-    }[];
+    }>;
     titleForExportedFile?: string;
 }
 

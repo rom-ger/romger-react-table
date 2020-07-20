@@ -54,11 +54,11 @@ export interface IRgReactTable {
     props: IRgReactTableProps;
     state: IRgReactTableState;
     minAvailableWidth: number;
-    headRefs: (HTMLDivElement | null)[];
-    thBorderRefs: (HTMLDivElement | null)[];
-    tdRefs: (HTMLTableDataCellElement | null)[];
-    trRefs: (HTMLTableRowElement | null)[];
-    fixRowRefs: (HTMLDivElement | null)[];
+    headRefs: Array<HTMLDivElement | null>;
+    thBorderRefs: Array<HTMLDivElement | null>;
+    tdRefs: Array<HTMLTableDataCellElement | null>;
+    trRefs: Array<HTMLTableRowElement | null>;
+    fixRowRefs: Array<HTMLDivElement | null>;
     refWrap: HTMLDivElement | null;
     headWrap: HTMLDivElement | null;
     fixRowWrapRef: HTMLDivElement | null;
@@ -98,14 +98,14 @@ export interface IRgReactTable {
 
 class RgReactTable extends RgReactBaseComponent<IRgReactTableProps, IRgReactTableState> implements IRgReactTable {
     minAvailableWidth: number = 25;
-    headRefs: (HTMLDivElement | null)[] = [];
+    headRefs: Array<HTMLDivElement | null> = [];
     refWrap: HTMLDivElement | null = null;
     headWrap: HTMLDivElement | null = null;
     fixRowWrapRef: HTMLDivElement | null = null;
-    thBorderRefs: (HTMLDivElement | null)[] = [];
-    tdRefs: (HTMLTableDataCellElement | null)[] = [];
-    trRefs: (HTMLTableRowElement | null)[] = [];
-    fixRowRefs: (HTMLDivElement | null)[] = [];
+    thBorderRefs: Array<HTMLDivElement | null> = [];
+    tdRefs: Array<HTMLTableDataCellElement | null> = [];
+    fixRowRefs: Array<HTMLDivElement | null> = [];
+    trRefs: Array<HTMLTableRowElement | null> = [];
     maxWidthColumn: number = 800;
     minWidthColumn: number = 150;
     timeout: number = 100;
