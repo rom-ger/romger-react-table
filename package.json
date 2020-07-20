@@ -1,6 +1,6 @@
 {
     "name": "@romger/react-table",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "@romger/react-table",
     "repository": {
         "type": "git",
@@ -16,7 +16,7 @@
     ],
     "dependencies": {
         "@material-ui/core": "3.2.0",
-        "@romger/react-checkbox": "1.0.0",
+        "@romger/react-checkbox": "1.0.1",
         "@romger/react-datepicker": "1.0.0",
         "@romger/react-flex-layout": "1.0.0",
         "@romger/react-global-module": "1.0.0",
