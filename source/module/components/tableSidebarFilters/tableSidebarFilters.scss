@@ -1,0 +1,73 @@
+.dictionary-list-table-sidebar-filters {
+  width: 100%;
+  min-height: 100%;
+
+  &__filter-group-title {
+    margin-top: 3px;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__filter-wrap {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    /* total width */
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #1d2a3a;
+    }
+
+    /* background of the scrollbar except button or resizer */
+    &::-webkit-scrollbar-track {
+      background-color: #fff;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background-color: #fff;
+    }
+
+    /* scrollbar itself */
+    &::-webkit-scrollbar-thumb {
+      border: 0;
+      border-radius: 16px;
+      background-color: #e8e8e8;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      border: 0;
+      background-color: #e8e8e8;
+    }
+
+    /* set button(top and bottom of the scrollbar) */
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+    
+  }
+
+  &__header {
+    padding: 12px;
+    border-bottom: 1px solid #e8e8e8;
+
+    .dictionary-list-filter-wrap__apply-action {
+      width: 120px;
+      margin: 0 12px 0 0;
+
+      &--default {
+        margin: 0 0 0 12px;
+      }
+    }
+  }
+
+  .collapsible-sidebar-filter-block {
+    padding: 6px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+}

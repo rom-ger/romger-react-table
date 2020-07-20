@@ -1,0 +1,12 @@
+.dictionary-list-filter-wrap {
+  &__bool-item {
+    padding: 3px 0;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &--selected {
+      font-weight: 600;
+    }
+  }
+}

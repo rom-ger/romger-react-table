@@ -1,0 +1,399 @@
+.dictionary-list {
+  &__table-block {
+    overflow-x: auto;
+    overflow-y: auto;
+    background: #fff;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+
+    /* total width */
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #1d2a3a;
+    }
+
+    /* background of the scrollbar except button or resizer */
+    &::-webkit-scrollbar-track {
+      background-color: #f9f9fb;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background-color: #f9f9fb;
+    }
+
+    /* scrollbar itself */
+    &::-webkit-scrollbar-thumb {
+      border: 0;
+      border-radius: 16px;
+      background-color: #a7adb6;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      border: 0;
+      background-color: #a7adb6;
+    }
+
+    /* set button(top and bottom of the scrollbar) */
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    max-height: 100%;
+    margin-left: 0;
+
+    &--loading {
+      overflow: hidden;
+    }
+  }
+
+  &__main-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  &__table-wrap {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #eceff1;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    background: #f4f5f7;
+    border-bottom: 2px solid #dfe1e6;
+    height: 32px;
+  }
+
+  &__head-item-wrap {
+    position: relative;
+    width: 100%;
+    height: 18px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 0 4px;
+    border-radius: 3px;
+    border-right: 1px solid #dfe1e6;
+    overflow: hidden;
+  }
+
+  &__head-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 32px;
+    padding: 4px 0;
+    transition: all 300ms ease;
+    background: #f4f5f7;
+    background-color: #f4f5f7;
+    box-shadow: 0 1px 0 0 #eceff1;
+    color: #23282b;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    word-break: keep-all;
+    border-bottom: 2px solid #dfe1e6;
+
+    &--hide {
+      min-width: 0 !important;
+      max-width: 0 !important;
+      padding: 4px 0;
+      overflow: hidden;
+    }
+
+    &.not-select {
+      transition: none;
+      user-select: none;
+    }
+
+    &:hover {
+      .dictionary-list__head-item-wrap {
+        height: 24px;
+        background: #ebecf0;
+        border-right: 2px solid #c1c7d0;
+      }
+    }
+  }
+
+  &__head-item-title {
+    color: #5e6c84;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-right: 20px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__head-item-icon {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+      margin-left: 0;
+    }
+
+    &--sort {
+      top: inherit;
+      bottom: 9px;
+    }
+  }
+
+  &__head-item-hover {
+    cursor: pointer;
+
+    &:hover,
+    &--open {
+      background: #f5f6f7;
+    }
+  }
+
+  &__table {
+    width: auto;
+    border-spacing: 0;
+    background-color: #fff;
+
+    tbody tr {
+      border-top: 1px solid #eceff1;
+
+      &:first-of-type {
+        border-top: 0;
+      }
+    }
+
+    td {
+      transition: all 300ms ease;
+      text-align: left;
+      word-break: keep-all;
+
+      &.not-select {
+        transition: none;
+        user-select: none;
+      }
+
+      &.row-hide {
+        min-width: 0 !important;
+        max-width: 0 !important;
+        padding: 5px 0;
+      }
+    }
+
+    td {
+      padding: 5px 0 5px 4px;
+      overflow: hidden;
+      font-size: 13px;
+      text-overflow: ellipsis;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    tbody {
+      tr {
+        cursor: pointer;
+
+        &.row-hover,
+        &:hover {
+          background: #f5f6f7;
+        }
+
+        &.dictionary-list__select-row {
+          background: #c8ebfb;
+
+          &:hover {
+            background: #c8ebfb;
+          }
+        }
+      }
+    }
+
+    .dictionary-list__button,
+    .material-icons {
+      margin: 0 6px !important;
+    }
+  }
+
+  &__action-wrap {
+    .material-icons {
+      margin-left: 12px;
+    }
+  }
+
+  &__href {
+    color: #0034a6;
+    cursor: pointer;
+  }
+
+  &__filter-wrap {
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 2px;
+    min-width: 300px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+  }
+
+  &__loading-overlay {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__loading-spinner {
+    padding: 32px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .pagination-custom {
+    padding: 0;
+  }
+
+  .pagination-custom__wrapper {
+    padding: 12px;
+    border: 1px solid #e8e8e8;
+    border-top: 0;
+    background-color: #f9f9fb;
+  }
+
+  &__head-item-border {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: -6px;
+    box-sizing: content-box;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 1px;
+    height: 100%;
+    padding: 0 6px;
+    cursor: col-resize;
+
+    &::after {
+      content: "";
+      height: 100%;
+    }
+  }
+
+  &__head-item-shadow-border {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+  }
+
+  &__fix-column {
+    flex-shrink: 0;
+    border: 1px solid #eceff1;
+
+    .dictionary-list__head-item {
+      width: 300px;
+
+      &--hide {
+        min-width: inherit !important;
+        max-width: inherit !important;
+      }
+    }
+
+    .dictionary-list__head-item-border {
+      display: none;
+    }
+  }
+
+  &__fix-row-wrap {
+    width: 100%;
+    height: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: auto;
+    background: #fff;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+
+    /* total width */
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #1d2a3a;
+    }
+
+    /* background of the scrollbar except button or resizer */
+    &::-webkit-scrollbar-track {
+      background-color: #f9f9fb;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background-color: #f9f9fb;
+    }
+
+    /* scrollbar itself */
+    &::-webkit-scrollbar-thumb {
+      border: 0;
+      border-radius: 16px;
+      background-color: #a7adb6;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      border: 0;
+      background-color: #a7adb6;
+    }
+
+    /* set button(top and bottom of the scrollbar) */
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+
+  &__fix-row-item {
+    flex-shrink: 0;
+    padding: 5px 4px 5px;
+    overflow: hidden;
+    border-bottom: 1px solid #eceff1;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    &.row-hover,
+    &:hover {
+      background: #f5f6f7;
+    }
+  }
+}

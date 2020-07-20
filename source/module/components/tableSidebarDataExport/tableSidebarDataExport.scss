@@ -1,0 +1,52 @@
+.dictionary-list-table-sidebar-data-export {
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* total width */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #1d2a3a;
+  }
+
+  /* background of the scrollbar except button or resizer */
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: #fff;
+  }
+
+  /* scrollbar itself */
+  &::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 16px;
+    background-color: #e8e8e8;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border: 0;
+    background-color: #e8e8e8;
+  }
+
+  /* set button(top and bottom of the scrollbar) */
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  width: 100%;
+  padding: 6px;
+
+  .download-excel-button {
+    width: 100%;
+    height: 36px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background: #004cb0;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

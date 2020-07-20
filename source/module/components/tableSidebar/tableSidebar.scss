@@ -1,0 +1,67 @@
+$sidebar-toggle-buttons-panel-width: 36px;
+$sidebar-content-width: 380px;
+
+.dictionary-list-table-sidebar {
+  position: relative;
+  width: $sidebar-content-width + $sidebar-toggle-buttons-panel-width;
+  overflow-x: hidden;
+  transition: all 500ms ease;
+  border-top: 1px solid #eceff1;
+  border-right: 1px solid #eceff1;
+  border-bottom: 1px solid #eceff1;
+
+  &__content {
+    width: $sidebar-content-width;
+    background-color: #f9f9fb;
+  }
+
+  &__toggle-buttons {
+    width: $sidebar-toggle-buttons-panel-width;
+    border-right: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+
+    &--without-right-border {
+      border-right: 0;
+    }
+  }
+
+  &__toggle-button {
+    width: 100%;
+    min-height: 30px;
+    padding: 3px 0;
+    writing-mode: vertical-rl;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:not(&--selected):hover {
+      background-color: #e8e8e8;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    &--selected {
+      transform: translateX(1px);
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+
+  &__toggle-button-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__toggle-button-title {
+    margin-top: 6px;
+
+    &--without-top-margin {
+      margin-top: 0;
+    }
+  }
+
+  &--hidden {
+    width: $sidebar-toggle-buttons-panel-width;
+  }
+}
